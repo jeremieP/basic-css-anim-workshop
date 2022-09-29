@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -24,7 +25,7 @@ main {
 
 .name {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
 
   padding: 0 40px;
@@ -54,3 +55,126 @@ main {
 .blue-green {
   background-color: lightseagreen;
 }
+
+/* ANIMATIONS */
+
+.anim1 {
+  animation: flip-scale-up-hor 2s ease-in-out infinite alternate;
+}
+
+.anim2 {
+	animation: scale-up-center 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.DDD) infinite alternate both;
+}
+
+.anim3 {
+	animation: rotate-center 2s infinite both;
+}
+
+.anim4 {
+	animation: slide-top 0.5s cubic-bezier(0.550, 0.055, 0.675, 0.190) infinite alternate both;
+}
+
+.anim5 {
+	animation: tracking-in-expand 1s cubic-bezier(0.215, 0.610, 0.355, 1.DDD) infinite alternate both;
+}
+
+.anim6 {
+	animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+.anim7 {
+	animation: text-focus-in 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite alternate both;
+}
+
+/* KEYFRAMES */
+
+/* Horizontal Flip */
+@keyframes flip-scale-up-hor {
+  0% {
+    -webkit-transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
+  }
+  50% {
+    -webkit-transform: scale(2.5) rotateX(-90deg);
+    transform: scale(2.5) rotateX(-90deg);
+  }
+  100% {
+    -webkit-transform: scale(1) rotateX(-180deg);
+    transform: scale(1) rotateX(-180deg);
+  }
+}
+
+/* Zoom in & Zoom out */
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Simple rotation */
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bounce it */
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+/* Accordion */
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Bounce it 3D */
+@keyframes text-pop-up-top {
+  0% {
+    transform: translateY(0);
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    transform: translateY(-50px);
+    transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #DDD, 0 2px 0 #DDD, 0 3px 0 #DDD, 0 4px 0 #DDD, 0 5px 0 #DDD, 0 6px 0 #DDD, 0 7px 0 #DDD, 0 8px 0 #DDD, 0 9px 0 #DDD, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Blur me !*/
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+
